@@ -29,6 +29,7 @@ Java快读支持字符串、（长）整形的读取，用法与`Scanner`完全�
 ### What is MaxHeap or MinHeap?
 
 You can consider them as a special container. You can add integers into them and get some information about the integers. 
+**You may need them to find the median.**
 
 ### How do they work?
 
