@@ -128,3 +128,110 @@ class QWriter implements Closeable {
         }
     }
 }
+
+/**
+ * MaxHeap & MinHeap class may help you find the median
+ * To correctly use them, you should first instantiate the object
+ * and then use the public methods in it.
+ */
+class MaxHeap{
+    private static final int MAXSIZE = 10010;
+    private int[] a = new int[MAXSIZE];
+    private void swap(int x,int y){
+        a[x] = a[x]^a[y];
+        a[y] = a[y]^a[x];
+        a[x] = a[x]^a[y];
+    }
+    private void up(){
+        int p = a[0];
+        while(p > 1){
+            if (a[p] < a[p/2]){
+                swap(p,p/2);
+                p = p / 2;
+            }
+            else
+                break;
+        }
+    }
+
+    public void push(int k){
+        a[++a[0]] = k;
+        up();
+    }
+    public void pop(){
+        if (a[0] == 0){
+            System.err.println("Cannot execute pop operation, size should be at least 1");
+            return;
+        }
+        int s = 2, t = 1;
+        a[1] = a[a[0]--];
+        while (s <= a[0]){
+            if (s <= a[0] - 1 && a[s+1] < a[s])
+                ++s;
+            if (a[s] < a[t]){
+                swap(s, t);
+                t = s;
+                s*=2;
+            }
+            else
+                break;
+        }
+    }
+    public int getMax(){
+        return a[1];
+    }
+    public int size(){
+        return a[0];
+    }
+}
+
+class MinHeap{
+    private static final int MAXSIZE = 10010;
+    private int[] a = new int[MAXSIZE];
+    private void swap(int x,int y){
+        a[x] = a[x]^a[y];
+        a[y] = a[y]^a[x];
+        a[x] = a[x]^a[y];
+    }
+    private void up(){
+        int p = a[0];
+        while(p > 1){
+            if (a[p] > a[p/2]){
+                swap(p,p/2);
+                p = p / 2;
+            }
+            else
+                break;
+        }
+    }
+
+    public void push(int k){
+        a[++a[0]] = k;
+        up();
+    }
+    public void pop(){
+        if (a[0] == 0){
+            System.err.println("Cannot execute pop operation, size should be at least 1");
+            return;
+        }
+        int s = 2, t = 1;
+        a[1] = a[a[0]--];
+        while (s <= a[0]){
+            if (s <= a[0] - 1 && a[s+1] > a[s])
+                ++s;
+            if (a[s] > a[t]){
+                swap(s,t);
+                t = s;
+                s*=2;
+            }
+            else
+                break;
+        }
+    }
+    public int getMin(){
+        return a[1];
+    }
+    public int size(){
+        return a[0];
+    }
+}
