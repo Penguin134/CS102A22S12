@@ -2,9 +2,11 @@
 
 这里，我们将会对`Main.java`文件中的class进行解释
 
+Hint 1：我们提供了两种特殊容器MaxHeap和MinHeap，你可以参考下文给出的说明使用它们，来解决寻找中位数的问题
+
+Hint 2：我们提供了Java HashMap的使用说明，你可以参考并使用HashMap解决题目中的某些问题
+
 ## Class QReader & QWiter
-
-
 
 ### What is Java Fast IO?
 
@@ -29,6 +31,7 @@ Java快读支持字符串、（长）整形的读取，用法与`Scanner`完全�
 ### What is MaxHeap or MinHeap?
 
 You can consider them as a special container. You can add integers into them and get some information about the integers. 
+
 **You may need them to find the median.**
 
 ### How do they work?
@@ -64,3 +67,23 @@ You can get the size of the container by `heap2.size()`
 
 Do **NOT** use `pop()` when the container is empty! 
 
+## Class HashMap
+
+HashMap是Java中自带的一种容器，它可以帮你快速寻找Object.
+
+Use the following code to build a mapping between a String Object and an integer.
+
+```java
+HashMap<String,Integer> map = new HashMap<>();
+```
+
+You may find some method helpful in this problem.
+
+```java
+map.put("SUSTech",1088); // Add a new mapping
+map.remove("SUSTech"); // Delete a mapping
+map.containsKey("SUSTech"); // Find an Object quickly
+map.get("SUSTech"); // Returns the value to which the key is mapped
+```
+
+For more information about Java HashMap, you're encouraged to ask Professor **Baidu**.
