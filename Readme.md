@@ -2,6 +2,8 @@
 
 这里，我们将会对`Main.java`文件中的class进行解释
 
+**重要**：下面的提示供**学有余力**并且**对编程感兴趣**的同学参考，如果你对此不感兴趣，你可以忽略Hint1和Hint2，用传统方法解题。不过我们还是推荐你使用剩下的Class QReader & QWiter， 这样会让你的程序更容易Accept！
+
 Hint 1：我们提供了两种特殊容器MaxHeap和MinHeap，你可以参考下文给出的说明使用它们，来解决寻找中位数的问题
 
 Hint 2：我们提供了Java HashMap的使用说明，你可以参考并使用HashMap解决题目中的某些问题
@@ -15,6 +17,8 @@ Some assignments on the Online Judge system may contain large size of input and 
 ### How to use?
 
 把`Main.java`文件拷贝至本地，根据注释在指定地方写代码。在OJ上提交整个`Main.java`文件内的所有代码。
+
+我们已经学过了初步的面向对象编程，要想使用快读快写，我们首先要实例化对象，然后调用其方法。（参考代码中的注释）
 
 Java快读支持字符串、（长）整形的读取，用法与`Scanner`完全一样。同时支持判断是否有输入。
 
