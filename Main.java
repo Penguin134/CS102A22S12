@@ -134,7 +134,8 @@ class QWriter implements Closeable {
  * To correctly use them, you should first instantiate the object
  * and then use the public methods in it.
  */
-class MaxHeap{
+
+class MinHeap{
     private static final int MAXSIZE = 10010;
     private int[] a = new int[MAXSIZE];
     private void swap(int x,int y){
@@ -159,10 +160,6 @@ class MaxHeap{
         up();
     }
     public void pop(){
-        if (a[0] == 0){
-            System.err.println("Cannot execute pop operation, size should be at least 1");
-            return;
-        }
         int s = 2, t = 1;
         a[1] = a[a[0]--];
         while (s <= a[0]){
@@ -177,7 +174,7 @@ class MaxHeap{
                 break;
         }
     }
-    public int getMax(){
+    public int getMin(){
         return a[1];
     }
     public int size(){
@@ -185,7 +182,7 @@ class MaxHeap{
     }
 }
 
-class MinHeap{
+class MaxHeap{
     private static final int MAXSIZE = 10010;
     private int[] a = new int[MAXSIZE];
     private void swap(int x,int y){
@@ -210,10 +207,6 @@ class MinHeap{
         up();
     }
     public void pop(){
-        if (a[0] == 0){
-            System.err.println("Cannot execute pop operation, size should be at least 1");
-            return;
-        }
         int s = 2, t = 1;
         a[1] = a[a[0]--];
         while (s <= a[0]){
@@ -228,7 +221,7 @@ class MinHeap{
                 break;
         }
     }
-    public int getMin(){
+    public int getMax(){
         return a[1];
     }
     public int size(){
