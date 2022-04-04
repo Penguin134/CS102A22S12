@@ -41,29 +41,29 @@ You can consider them as a special container. You can add integers into them and
 To use them, first you should instantiate an object of these two classes, respectively. 
 
 ```java
-MinHeap heap1 = new MinHeap();
-MaxHeap heap2 = new MaxHeap();
+MaxHeap heap1 = new MaxHeap();
+MinHeap heap2 = new MinHeap();
 ```
 
 #### MinHeap
 
-You can add an integer `k` into it by `heap1.push(k)`
+You can add an integer `k` into it by `heap2.push(k)`
 
-You can get the min value of all the integers you add by `heap1.getMin()`
+You can get the min value of all the integers you add by `heap2.getMin()`
 
-You can remove the minimun integer by `heap1.pop()`
+You can remove the minimun integer by `heap2.pop()`
 
-You can get the size of the container by `heap1.size()`
+You can get the size of the container by `heap2.size()`
 
 #### MaxHeap
 
-You can add an integer `k` into it by `heap2.push(k)`
+You can add an integer `k` into it by `heap1.push(k)`
 
-You can get the max value of all the integers you add by `heap2.getMax()`
+You can get the max value of all the integers you add by `heap1.getMax()`
 
-You can remove the maximun integer by `heap2.pop()`
+You can remove the maximun integer by `heap1.pop()`
 
-You can get the size of the container by `heap2.size()`
+You can get the size of the container by `heap1.size()`
 
 #### Attention
 
@@ -74,26 +74,28 @@ Do **NOT** use `pop()` when the container is empty!
 How to use these two containers to find the median in a group of integers?
 
 ```
-set two heaps: heap1 = new MinHeap(); heap2 = new MaxHeap();
+set two heaps: heap1 = new MaxHeap(); heap2 = new MinHeap();
 At initial, no integer in both heaps.
 
 If we want to add an integer k, do:
 
-	if heap1 is empty or the minimum in heap1 is larger than k:
+	if heap1 is empty or the maximum in heap1 is larger than k:
 		add k into heap1
 		if the size of heap1 is larger than size of heap2 + 1:
-			add the minimum integer of heap1 into heap2
-			remove the minimum integer of heap1
+			add the maximun integer of heap1 into heap2
+			remove the maximum integer of heap1
 	else:
 		add k into heap2
 		if the size of heap1 is less than size of heap2:
-			add the maximun integer of heap2 into heap1
-			remove the maximun integer of heap2
+			add the minimum integer of heap2 into heap1
+			remove the minimum integer of heap2
 					
 If we want to find the median of the integers in heap1 + heap2:
-	find the minimum integer of heap1
+	find the maximum integer of heap1
 	// Then, this is the median
 ```
+
+
 
 
 
@@ -139,4 +141,3 @@ If we want to find how many string in map equals string s:
 
 
 For more information about Java HashMap, you're encouraged to ask Professor **Baidu**.
-
