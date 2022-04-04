@@ -82,13 +82,13 @@ If we want to add an integer k, do:
 	if heap1 is empty or the minimum in heap1 is larger than k:
 		add k into heap1
 		if the size of heap1 is larger than size of heap2 + 1:
-				add the minimum integer of heap1 into heap2
-				remove the minimum integer of heap1
+			add the minimum integer of heap1 into heap2
+			remove the minimum integer of heap1
 	else:
 		add k into heap2
 		if the size of heap1 is less than size of heap2:
-				add the maximun integer of heap2 into heap1
-				remove the maximun integer of heap2
+			add the maximun integer of heap2 into heap1
+			remove the maximun integer of heap2
 					
 If we want to find the median of the integers in heap1 + heap2:
 	find the minimum integer of heap1
@@ -116,8 +116,6 @@ map.containsKey("SUSTech"); // Find an Object quickly
 map.get("SUSTech"); // Returns the value to which the key is mapped
 ```
 
-
-
 ### 伪代码
 
 How to use HashMap to match the string?
@@ -127,17 +125,18 @@ set a HashMap<String,Integer> map
 we use the Integer n to denote the number of the same string s
 If we want to add a string s into map:
 	if the map has contained the key s:
-			map.replace(s,n+1)
+		map.replace(s,n+1)
 	else:
-			add a new mapping <s, 1>
+		add a new mapping <s, 1>
 				
 If we want to find how many string in map equals string s:
 	if map contains a key named s:
-			use map.get(s) to find the number, and return it
+		use map.get(s) to find the number, and return it
 	else:
-			return 0
+		return 0
 ```
 
 
 
 For more information about Java HashMap, you're encouraged to ask Professor **Baidu**.
+
