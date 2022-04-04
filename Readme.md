@@ -2,11 +2,9 @@
 
 这里，我们将会对`Main.java`文件中的class进行解释
 
-**重要**：下面的提示供**学有余力**并且**对编程感兴趣**的同学参考，如果你对此不感兴趣，你可以忽略Hint1和Hint2，用传统方法解题。不过我们还是推荐你使用剩下的Class QReader & QWiter， 这样会让你的程序更容易Accept！
+Hint 1：我们提供了两种特殊容器MaxHeap和MinHeap，你可以参考下文给出的详细**伪代码**使用它们，来解决寻找中位数的问题
 
-Hint 1：我们提供了两种特殊容器MaxHeap和MinHeap，你可以参考下文给出的说明使用它们，来解决寻找中位数的问题
-
-Hint 2：我们提供了Java HashMap的使用说明，你可以参考并使用HashMap解决题目中的某些问题
+Hint 2：我们提供了Java HashMap的使用说明，你可以参考下文给出的详细**伪代码**使用使用HashMap解决题目中的某些问题
 
 ## Class QReader & QWiter
 
@@ -53,7 +51,7 @@ You can add an integer `k` into it by `heap1.push(k)`
 
 You can get the min value of all the integers you add by `heap1.getMin()`
 
-You can remove the min integer by `heap1.pop()`
+You can remove the minimun integer by `heap1.pop()`
 
 You can get the size of the container by `heap1.size()`
 
@@ -63,13 +61,41 @@ You can add an integer `k` into it by `heap2.push(k)`
 
 You can get the max value of all the integers you add by `heap2.getMax()`
 
-You can remove the max integer by `heap2.pop()`
+You can remove the maximun integer by `heap2.pop()`
 
 You can get the size of the container by `heap2.size()`
 
 #### Attention
 
 Do **NOT** use `pop()` when the container is empty! 
+
+### 伪代码
+
+How to use these two containers to find the median in a group of integers?
+
+```
+set two heaps: heap1 = new MinHeap(); heap2 = new MaxHeap();
+At initial, no integer in both heaps.
+
+If we want to add an integer k, do:
+
+	if heap1 is empty or the minimum in heap1 is larger than k:
+			add k into heap1
+			if the size of heap1 is larger than size of heap2 + 1:
+					add the minimum integer of heap1 into heap2
+					remove the minimum integer of heap1
+	else:
+			add k into heap2
+			if the size of heap1 is less than size of heap2:
+					add the maximun integer of heap2 into heap1
+					remove the maximun integer of heap2
+					
+If we want to find the median of the integers in heap1 + heap2:
+		find the minimum integer of heap1
+		// Then, this is the median
+```
+
+
 
 ## Class HashMap
 
@@ -89,5 +115,27 @@ map.remove("SUSTech"); // Delete a mapping
 map.containsKey("SUSTech"); // Find an Object quickly
 map.get("SUSTech"); // Returns the value to which the key is mapped
 ```
+
+### 伪代码
+
+How to use HashMap to match the string?
+
+```
+set a HashMap<String,Integer> map
+we use the Integer n to denote the number of the same string s
+If we want to add a string s into map:
+		if the map has contained the key s:
+				map.replace(s,n+1)
+		else:
+				add a new mapping <s, 1>
+				
+If we want to find how many string in map equals string s:
+		if map contains a key named s:
+				use map.get(s) to find the number, and return it
+		else:
+				return 0
+```
+
+
 
 For more information about Java HashMap, you're encouraged to ask Professor **Baidu**.
