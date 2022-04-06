@@ -4,7 +4,7 @@
 
 Hint 1：我们提供了两种特殊容器MaxHeap和MinHeap，你可以参考下文给出的详细**伪代码**使用它们，来解决寻找中位数的问题
 
-Hint 2：我们提供了Java HashMap的使用说明，你可以参考下文给出的详细**伪代码**使用使用HashMap解决题目中的某些问题
+Hint 2：`String.equals()`可以解决字符串的匹配问题，如果你感兴趣，你可以参考下文Class HashMap给出的详细**伪代码**使用使用HashMap解决题目中的字符串匹配问题
 
 ## Class QReader & QWiter
 
